@@ -542,9 +542,8 @@ img {
   grid-template-columns: 144px 176px;
   grid-gap: 20px;
 }
+
 .trending__block:hover {
-  transform: scale(1.05);
-  transition: 0.5s;
   cursor: pointer;
 }
 

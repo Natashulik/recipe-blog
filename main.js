@@ -39,3 +39,139 @@ tl.to(".cube .cube__face--right", { backgroundPosition: "0% 50%" }, 0.15);
     }
   }
 })();
+
+// scroll animation
+
+ScrollTrigger.batch(".title", {
+  onEnter: (batch) => {
+    gsap.from(batch, {
+      y: "100%",
+      opacity: 0,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  },
+  onLeaveBack: (batch) => {
+    gsap.to(batch, {
+      y: "0",
+      opacity: 1,
+      duration: 1,
+      stagger: 0.2,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  },
+});
+
+/*--------section lstest ------------- */
+
+const latestCards = document.querySelectorAll(".latest__card");
+
+latestCards.forEach((card) => {
+  card.addEventListener("mouseenter", () => {
+    gsap.to(card, { scale: 1.1, duration: 0.5 });
+  });
+  card.addEventListener("mouseleave", () => {
+    gsap.to(card, { scale: 1, duration: 0.5 });
+  });
+});
+
+/* ---------section popular------------------ */
+
+ScrollTrigger.batch(".popular__recipe", {
+  onEnter: (batch) => {
+    gsap.from(batch, {
+      x: "-100%",
+      opacity: 0,
+      duration: 2,
+      stagger: 0.2,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  },
+  onLeaveBack: (batch) => {
+    gsap.to(batch, {
+      x: "0%",
+      opacity: 1,
+      duration: 2,
+      stagger: 0.2,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  },
+});
+
+ScrollTrigger.batch(".orange__title", {
+  onEnter: (batch) => {
+    gsap.from(batch, {
+      y: "50px",
+      opacity: 0,
+      duration: 2,
+      stagger: 0.2,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  },
+  onLeaveBack: (batch) => {
+    gsap.to(batch, {
+      y: "0",
+      opacity: 1,
+      duration: 2,
+      stagger: 0.2,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  },
+});
+
+/*---------section combination-----------*/
+
+gsap.from(".author__top", {
+  scrollTrigger: {
+    trigger: ".author__top",
+    start: "30% center",
+    end: "+=300px",
+  },
+  scale: 0,
+  transformOrigin: "top center",
+  ease: "none",
+  stagger: 0.2,
+});
+
+ScrollTrigger.batch(".combination__title", {
+  onEnter: (batch) => {
+    gsap.from(batch, {
+      y: "30px",
+      opacity: 0,
+      duration: 2,
+      stagger: 0.2,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  },
+  onLeaveBack: (batch) => {
+    gsap.to(batch, {
+      y: "0",
+      opacity: 1,
+      duration: 2,
+      stagger: 0.2,
+      ease: "power2.out",
+      overwrite: "auto",
+    });
+  },
+});
+
+/*----section trending--------*/
+
+const trendingBlocks = document.querySelectorAll(".trending__block");
+
+trendingBlocks.forEach((block) => {
+  block.addEventListener("mouseenter", () => {
+    gsap.to(block, { scale: 1.1, duration: 0.5 });
+  });
+  block.addEventListener("mouseleave", () => {
+    gsap.to(block, { scale: 1, duration: 0.5 });
+  });
+});
